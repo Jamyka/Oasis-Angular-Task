@@ -1,0 +1,32 @@
+<div
+  style="display: flex;justify-content: center;align-items: center;padding: 25px 0;background-color: blueviolet; width: 100%;height: 100%;">
+  <mat-card style="max-width: 500px;" *ngIf="data">
+    <mat-card-header style="text-align: center;justify-content: center;">
+      <mat-card-title>{{data.title}}</mat-card-title>
+      <mat-card-subtitle>{{data.brand}}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image [src]="data.images[0]" alt="Photo of a Proudct" style="height: 300px; object-fit: contain;">
+    <mat-card-content>
+      <p>
+        <span style="color:#ccc;font-size: medium;">Product Title: </span>
+        <span>{{data.title}}</span>
+      </p>
+      <p>
+        <span style="color:#ccc;font-size: medium;">Product Description: </span>
+        <span>{{data.description}}</span>
+      </p>
+      <p>
+        <span style="color:#ccc;font-size: medium;">Product Price: </span>
+        <span>{{data.price}}</span>
+      </p>
+      <p>
+        <span style="color:#ccc;font-size: medium;">Product Stock: </span>
+        <span>{{data.stock}}</span>
+      </p>
+      <p>
+        <span style="color:#ccc;font-size: medium;">Product Rating: </span>
+        <span>{{data.rating}}</span>
+      </p>
+    </mat-card-content>
+  </mat-card>
+</div>

@@ -1,0 +1,14 @@
+<app-navbar></app-navbar>
+<div>
+  <div style="text-align: center;margin: 36px 0; padding: 0 150px;">
+    <p>Lorem ipsum dolor</p>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis repellat, sit asperiores laboriosam aut aliquid
+      harum omnis eos maiores porro illum atque, commodi est consequatur quo autem deleniti blanditiis dolore</p>
+  </div>
+  <mat-grid-list cols="3" rowHeight="340" gutterSize="5">
+    <mat-grid-tile style="border-radius: 16px;" *ngFor="let product of products">
+      <app-card-tile [item]="product" (editItemEvent)="editItem($event)" (deleteItemEvent)="deleteItem($event)">
+      </app-card-tile>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

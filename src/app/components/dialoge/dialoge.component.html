@@ -1,0 +1,49 @@
+<form [formGroup]="productData" (ngSubmit)="submit()" autocomplete="off"
+  style="display: flex; flex-direction: column;justify-content: center;align-items: center;width:100%">
+  <p style="width: 60%;">
+    <mat-form-field style="width: 100%;">
+      <mat-label> Product Title: </mat-label>
+      <input matInput type="text" formControlName="title">
+      <mat-error *ngIf="productData.get('title')?.errors && productData.get('title')?.errors?.['title']"> Invalid
+        Product Name
+      </mat-error>
+    </mat-form-field>
+  </p>
+  <p style="width: 60%;">
+    <mat-form-field style="width: 100%;">
+      <mat-label> Product Description: </mat-label>
+      <input matInput type="text" formControlName="description">
+      <mat-error
+        *ngIf="productData.get('description')?.errors && productData.get('description')?.errors?.['description']">
+        Invalid
+        Product Description
+      </mat-error>
+    </mat-form-field>
+  </p>
+  <p style="width: 60%;">
+    <mat-form-field style="width: 100%;">
+      <mat-label> Product Price: </mat-label>
+      <input matInput type="text" formControlName="price">
+      <mat-error *ngIf="productData.get('price')?.errors && productData.get('price')?.errors?.['price']">
+        Invalid
+        Product Price
+      </mat-error>
+    </mat-form-field>
+  </p>
+  <button mat-raised-button type="submit" [disabled]="!productData.valid" color="primary">Update Product Data</button>
+</form>
+
+<!-- <div *ngIf="data.flag =='view'">
+  <p>
+    <span style="color:#ccc;font-size: medium;">Product Title: </span>
+    <span>{{data.title}}</span>
+  </p>
+  <p>
+    <span style="color:#ccc;font-size: medium;">Product Description: </span>
+    <span>{{data.description}}</span>
+  </p>
+  <p>
+    <span style="color:#ccc;font-size: medium;">Product Price: </span>
+    <span>{{data.price}}</span>
+  </p>
+</div> -->

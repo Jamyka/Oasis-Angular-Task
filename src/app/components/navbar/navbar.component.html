@@ -1,0 +1,19 @@
+<mat-toolbar color="primary" class="mat-elevation-z6">
+  <button mat-icon-button>
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>Black Fries EC</span>
+  <span class="example-spacer"></span>
+
+  <!-- <ul class="items-list">
+    <li class="list-item">Home</li>
+    <li class="list-item">Products</li>
+    <li class="list-item">Add Product</li>
+  </ul> -->
+  <div>
+    <a mat-button routerLink="/home" routerLinkActive="active"> Home </a>
+    <a mat-button routerLink="/products" routerLinkActive="active"> Products </a>
+    <a mat-button (click)="openDialog({})"> Add Product </a>
+    <a mat-stroked-button (click)="logout()">LogOut</a>
+  </div>
+</mat-toolbar>

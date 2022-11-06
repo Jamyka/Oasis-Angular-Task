@@ -1,0 +1,21 @@
+<mat-card
+  style="display: flex;flex-direction: column;justify-content: center;align-items: center; background-color: bisque; height: 300px;width: 350px;border-radius: 16px !important;cursor: pointer;"
+  (click)="viewItem(item.id)">
+  <mat-card-header style="text-align: center;">
+    <mat-card-title>{{item.brand}}</mat-card-title>
+    <mat-card-subtitle>{{item.title}}</mat-card-subtitle>
+  </mat-card-header>
+  <div style="height:110px;border-radius: 8px;">
+    <img [src]="item.thumbnail" alt="Photo of a Shiba Inu" style="height: 100%;object-fit: contain;">
+  </div>
+  <mat-card-content style="padding-top: 16px;">
+    <p>
+      {{item.description | ellipsis:40}}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-flat-button color="primary" style="margin: 0px 16px"
+      (click)="getItemDetails($event,item.id,'view')">Edit</button>
+    <button mat-flat-button color="warn" (click)="deleteItem($event,item.id)">Delete</button>
+  </mat-card-actions>
+</mat-card>
